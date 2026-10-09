@@ -231,11 +231,11 @@
 
   .hero-title {
     font-family: var(--font-head);
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(2.1rem, 3.6vw, 3.2rem);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
     animation: fade-up 0.6s 0.1s ease both;
   }
   .hero-title .line { display: block; overflow: hidden; }
@@ -253,6 +253,16 @@
   @keyframes word-in {
     from { transform: translateY(110%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+  }
+
+  .hero-role {
+    font-family: var(--font-head);
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text2);
+    margin-bottom: 1.5rem;
+    animation: fade-up 0.6s 0.2s ease both;
   }
 
   .hero-desc {
@@ -312,11 +322,16 @@
   }
 
   /* Hero stats */
-  .hero-stats {
+  .stats-row {
     display: flex;
-    gap: 2rem;
-    margin-top: 3rem;
-    animation: fade-up 0.6s 0.45s ease both;
+    gap: 3rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3rem 0 3rem;
+    padding: 2rem 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
   }
   .stat-item { }
   .stat-num {
@@ -488,25 +503,31 @@
 
   /* ─── ABOUT ─── */
   #about { background: var(--bg); }
+  #skills { background: var(--bg2); }
+  #training { background: var(--bg); }
+  .skills-sub { margin-top: 6rem; }
+  .skills-sub .section-title { font-size: clamp(1.6rem, 2.8vw, 2.3rem); }
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
+    max-width: 1000px;
   }
   .about-text p {
     color: var(--text2);
-    font-size: 1.05rem;
+    font-size: clamp(1.1rem, 1.7vw, 1.4rem);
     font-weight: 300;
-    margin-bottom: 1.2rem;
-    line-height: 1.8;
+    margin-bottom: 1.6rem;
+    line-height: 1.9;
   }
+  #about .section-title { font-size: clamp(2.4rem, 4.6vw, 4rem); }
   .about-text p span { color: var(--accent); font-weight: 500; }
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
   .skill-category {
@@ -563,7 +584,7 @@
   }
 
   /* ─── PROJECTS ─── */
-  #projects { background: var(--bg2); }
+  #projects { background: var(--bg); }
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -713,7 +734,7 @@
   .proj-link svg { width: 14px; height: 14px; }
 
   /* ─── CERTIFICATIONS ─── */
-  #certs { background: var(--bg); }
+  #certs { background: var(--bg2); }
   .certs-list {
     margin-top: 4rem;
     display: flex;
@@ -859,7 +880,7 @@
     transition: stroke-dashoffset 2s cubic-bezier(0.23,1,0.32,1);
     filter: drop-shadow(0 0 6px rgba(0,229,255,0.5));
   }
-  .gpa-fill.animated { stroke-dashoffset: calc(408 - 408 * 0.775); }
+  .gpa-fill.animated { stroke-dashoffset: calc(408 - 408 * 0.85); }
   .gpa-center {
     position: absolute;
     inset: 0;
@@ -967,7 +988,7 @@
   }
 
   /* ─── CONTACT ─── */
-  #contact { background: var(--bg2); }
+  #contact { background: var(--bg); }
   .contact-inner {
     margin-top: 4rem;
     background: var(--surface);
@@ -1055,7 +1076,7 @@
 
   /* ─── FUN SECTION ─── */
   #fun-section {
-    background: var(--bg);
+    background: var(--bg2);
     padding: 80px 5vw 100px;
     text-align: center;
   }
@@ -1294,7 +1315,7 @@
     .tech-ring { display: none; }
     .float-card { display: none; }
     .hero-inner { flex-direction: column-reverse; }
-    .hero-title { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+    .hero-title { font-size: clamp(1.9rem, 7vw, 2.8rem); }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .edu-card { grid-template-columns: 1fr; text-align: center; }
@@ -1303,7 +1324,7 @@
     .projects-grid { grid-template-columns: 1fr; }
     .contact-inner { padding: 2.5rem 1.5rem; }
     .contact-links { flex-direction: column; align-items: center; }
-    .hero-stats { gap: 1.5rem; }
+    .stats-row { gap: 1.5rem; }
     .cert-item { grid-template-columns: auto 1fr; gap: 1rem; }
     .cert-date { grid-column: 2; }
   }
@@ -1312,11 +1333,11 @@
     section { padding: 60px 5vw; }
     nav { padding: 0 5vw; }
     .hero-badge { font-size: 0.7rem; }
-    .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
+    .hero-title { font-size: clamp(1.7rem, 7.5vw, 2.3rem); }
     .hero-desc { font-size: 0.95rem; }
     .hero-ctas { flex-direction: column; }
     .btn-primary, .btn-secondary { justify-content: center; }
-    .hero-stats { gap: 1rem; }
+    .stats-row { gap: 1rem; }
     .stat-num { font-size: 1.6rem; }
     .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
     .skills-grid { grid-template-columns: 1fr; }
@@ -1335,8 +1356,8 @@
   }
 
   @media (max-width: 400px) {
-    .hero-title { font-size: 1.9rem; }
-    .hero-stats { flex-wrap: wrap; }
+    .hero-title { font-size: 1.6rem; }
+    .stats-row { flex-wrap: wrap; }
     .edu-meta { gap: 1rem; }
     .hero-ctas .btn-primary, .hero-ctas .btn-secondary { padding: 11px 20px; }
   }
@@ -1424,8 +1445,6 @@
     .photo-frame { max-width: 180px !important; }
     /* More breathing room in hero */
     #hero { padding-top: 100px; padding-bottom: 60px; }
-    /* Animate hero stats on mobile */
-    .hero-stats { animation: fade-up 0.6s 0.5s ease both; }
     /* Contact links stack better */
     .contact-link { width: 100%; justify-content: center; max-width: 320px; }
   }
@@ -1784,8 +1803,10 @@
   <a href="#hero" class="nav-logo">ME<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#certs">Certs</a></li>
+    <li><a href="#training">Training</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1814,6 +1835,7 @@
         <span class="line"><span class="word">Mahmoud</span></span>
         <span class="line"><span class="word accent-text">Elattar</span></span>
       </h1>
+      <p class="hero-role">Data &amp; Machine Learning Engineer</p>
 
       <p class="hero-desc">
         Data Engineering student building production-grade pipelines, streaming systems & big data ecosystems. Turning raw data into insights, one pipeline at a time.
@@ -1829,20 +1851,6 @@
         </a>
       </div>
 
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num"><span class="counter" data-target="3">0</span><span class="accent">+</span></span>
-          <span class="stat-label">Projects Built</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num"><span class="counter" data-target="5">0</span><span class="accent">+</span></span>
-          <span class="stat-label">Certifications</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num"><span class="counter" data-target="10">0</span><span class="accent">+</span></span>
-          <span class="stat-label">Technologies</span>
-        </div>
-      </div>
     </div>
 
     <div class="hero-visual">
@@ -1864,7 +1872,7 @@
 
         <div class="float-card float-card-3">
           <span class="fc-label">GPA</span>
-          <span class="fc-value"><span class="fc-icon accent"></span>3.1 / 4.0</span>
+          <span class="fc-value"><span class="fc-icon accent"></span>3.4 / 4.0</span>
         </div>
       </div>
     </div>
@@ -1926,7 +1934,32 @@
         <p>When I'm not building pipelines, I'm expanding my German vocabulary or exploring new areas in cloud data engineering.</p>
       </div>
 
-      <div class="skills-grid reveal reveal-delay-2">
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <div class="section-tag">Skills</div>
+    <h2 class="section-title">Tools &amp; <span class="accent">Technologies</span></h2>
+
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <span class="stat-num"><span class="counter" data-target="3">0</span><span class="accent">+</span></span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num"><span class="counter" data-target="5">0</span><span class="accent">+</span></span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num"><span class="counter" data-target="10">0</span><span class="accent">+</span></span>
+          <span class="stat-label">Technologies</span>
+        </div>
+      </div>
+
+      <div class="skills-grid reveal reveal-delay-1">
         <div class="skill-category">
           <span class="sc-icon">⚡</span>
           <div class="sc-title">Languages</div>
@@ -1984,6 +2017,40 @@
           </div>
         </div>
       </div>
+
+    <div class="skills-sub" id="spoken-languages">
+      <div class="section-tag">Languages</div>
+      <h2 class="section-title">I speak <span class="accent">3 languages</span></h2>
+
+    <div class="lang-grid">
+      <div class="lang-card reveal">
+        <span class="lang-flag">🇪🇬</span>
+        <div class="lang-name">Arabic</div>
+        <div class="lang-level">Native</div>
+        <div class="lang-bar-bg">
+          <div class="lang-bar-fill lb-arabic" data-width="100"></div>
+        </div>
+        <div class="lang-pct">100%</div>
+      </div>
+      <div class="lang-card reveal reveal-delay-1">
+        <span class="lang-flag">🇬🇧</span>
+        <div class="lang-name">English</div>
+        <div class="lang-level">B2 — Upper Intermediate</div>
+        <div class="lang-bar-bg">
+          <div class="lang-bar-fill lb-english" data-width="72"></div>
+        </div>
+        <div class="lang-pct">72%</div>
+      </div>
+      <div class="lang-card reveal reveal-delay-2">
+        <span class="lang-flag">🇩🇪</span>
+        <div class="lang-name">German</div>
+        <div class="lang-level">A1 — Beginner</div>
+        <div class="lang-bar-bg">
+          <div class="lang-bar-fill lb-german" data-width="15"></div>
+        </div>
+        <div class="lang-pct">15%</div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -2088,7 +2155,43 @@
 <section id="certs">
   <div class="container">
     <div class="section-tag">Credentials</div>
-    <h2 class="section-title">Certifications <span class="accent">&amp;</span> Training</h2>
+    <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
+
+    <div class="certs-list">
+      <div class="cert-item reveal">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">Cyber Security — Certificate of Achievement</div>
+          <div class="cert-issuer">British University in Egypt · School of Continuing Education</div>
+        </div>
+        <span class="cert-date">Aug 2024</span>
+      </div>
+
+      <div class="cert-item reveal reveal-delay-1">
+        <div class="cert-icon">🛡️</div>
+        <div>
+          <div class="cert-name">Cyber Security — IAO Accredited Certificate</div>
+          <div class="cert-issuer">IMPACT · ISO 21001 Certified · Serial: ZIN1123</div>
+        </div>
+        <span class="cert-date">Oct 2024</span>
+      </div>
+
+      <div class="cert-item reveal reveal-delay-2">
+        <div class="cert-icon">🏦</div>
+        <div>
+          <div class="cert-name">IT Training</div>
+          <div class="cert-issuer">Agricultural Bank of Egypt</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Training -->
+<section id="training">
+  <div class="container">
+    <div class="section-tag">Learning</div>
+    <h2 class="section-title"><span class="accent">Training</span></h2>
 
     <div class="certs-list">
       <div class="cert-item reveal">
@@ -2119,21 +2222,19 @@
       </div>
 
       <div class="cert-item reveal reveal-delay-3">
-        <div class="cert-icon">🔐</div>
+        <div class="cert-icon">🤖</div>
         <div>
-          <div class="cert-name">Cyber Security — Certificate of Achievement</div>
-          <div class="cert-issuer">British University in Egypt · School of Continuing Education</div>
+          <div class="cert-name">Machine Learning Training — NTI</div>
+          <div class="cert-issuer">National Telecommunication Institute (NTI)</div>
         </div>
-        <span class="cert-date">Aug 2024</span>
       </div>
 
       <div class="cert-item reveal reveal-delay-4">
-        <div class="cert-icon">🛡️</div>
+        <div class="cert-icon">🧠</div>
         <div>
-          <div class="cert-name">Cyber Security — IAO Accredited Certificate</div>
-          <div class="cert-issuer">IMPACT · ISO 21001 Certified · Serial: ZIN1123</div>
+          <div class="cert-name">Machine Learning Training — DEPI</div>
+          <div class="cert-issuer">Ministry of Communications & IT of Egypt · DEPI</div>
         </div>
-        <span class="cert-date">Oct 2024</span>
       </div>
     </div>
   </div>
@@ -2161,7 +2262,7 @@
               <circle class="gpa-fill" id="gpaFill" cx="80" cy="80" r="65"/>
             </svg>
             <div class="gpa-center">
-              <span class="gpa-num">3.1</span>
+              <span class="gpa-num">3.4</span>
               <span class="gpa-sub">/ 4.0 GPA</span>
             </div>
           </div>
@@ -2176,44 +2277,6 @@
             <span class="edu-meta-key">Current</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Languages -->
-<section id="languages">
-  <div class="container">
-    <div class="section-tag">Languages</div>
-    <h2 class="section-title">I speak <span class="accent">3 languages</span></h2>
-
-    <div class="lang-grid">
-      <div class="lang-card reveal">
-        <span class="lang-flag">🇪🇬</span>
-        <div class="lang-name">Arabic</div>
-        <div class="lang-level">Native</div>
-        <div class="lang-bar-bg">
-          <div class="lang-bar-fill lb-arabic" data-width="100"></div>
-        </div>
-        <div class="lang-pct">100%</div>
-      </div>
-      <div class="lang-card reveal reveal-delay-1">
-        <span class="lang-flag">🇬🇧</span>
-        <div class="lang-name">English</div>
-        <div class="lang-level">B2 — Upper Intermediate</div>
-        <div class="lang-bar-bg">
-          <div class="lang-bar-fill lb-english" data-width="72"></div>
-        </div>
-        <div class="lang-pct">72%</div>
-      </div>
-      <div class="lang-card reveal reveal-delay-2">
-        <span class="lang-flag">🇩🇪</span>
-        <div class="lang-name">German</div>
-        <div class="lang-level">A1 — Beginner</div>
-        <div class="lang-bar-bg">
-          <div class="lang-bar-fill lb-german" data-width="15"></div>
-        </div>
-        <div class="lang-pct">15%</div>
       </div>
     </div>
   </div>
@@ -2358,7 +2421,7 @@
   }
 
   // Language bars
-  const langSection = document.getElementById('languages');
+  const langSection = document.getElementById('spoken-languages');
   const langObs = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       document.querySelectorAll('.lang-bar-fill').forEach(bar => {
@@ -2389,7 +2452,7 @@
       heroObs.disconnect();
     }
   }, { threshold: 0.5 });
-  heroObs.observe(document.getElementById('hero'));
+  heroObs.observe(document.querySelector('.stats-row'));
 
   // ─── SMOOTH NAV LINKS ───
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -2500,7 +2563,7 @@
 
   // ─── 4. BOTTOM NAV ACTIVE STATE ───
   (function() {
-    var sections = ['hero','about','projects','certs','education','contact'];
+    var sections = ['hero','about','skills','projects','certs','education','contact'];
     var links = document.querySelectorAll('.mbn-link');
     function updateActive() {
       var current = 'hero';
@@ -2556,7 +2619,7 @@
         })(i);
       }
     }
-    var stats = document.querySelector('.hero-stats');
+    var stats = document.querySelector('.stats-row');
     if (stats) {
       var obs = new IntersectionObserver(function(entries){
         if(entries[0].isIntersecting){ launch(); obs.disconnect(); }
@@ -2580,6 +2643,10 @@
     <li><a href="#about" class="mbn-link" data-section="about">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
       About
+    </a></li>
+    <li><a href="#skills" class="mbn-link" data-section="skills">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      Skills
     </a></li>
     <li><a href="#projects" class="mbn-link" data-section="projects">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
