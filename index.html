@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahmoud Elattar — Data Engineer</title>
+<title>Mahmoud Elattar — Data &amp; Machine Learning Engineer</title>
   <link rel="preload" as="image" href="1776024318580.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -490,6 +490,22 @@
     width: 24px; height: 1px;
     background: var(--accent);
   }
+
+  .section-headline {
+    font-family: var(--font-head);
+    font-size: clamp(2.4rem, 4.6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+  }
+  .section-sub {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    font-weight: 300;
+    color: var(--text2);
+    margin-top: 0.6rem;
+  }
+  .section-sub .accent { color: var(--accent); }
 
   .section-title {
     font-family: var(--font-head);
@@ -1340,6 +1356,7 @@
     .stats-row { gap: 1rem; }
     .stat-num { font-size: 1.6rem; }
     .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .section-headline { font-size: clamp(2rem, 9vw, 2.6rem); }
     .skills-grid { grid-template-columns: 1fr; }
     .edu-card { padding: 1.5rem; border-radius: 16px; }
     .edu-school { font-size: 1.3rem; }
@@ -1837,19 +1854,7 @@
       </h1>
       <p class="hero-role">Data &amp; Machine Learning Engineer</p>
 
-      <p class="hero-desc">
-        Data Engineering student building production-grade pipelines, streaming systems & big data ecosystems. Turning raw data into insights, one pipeline at a time.
-      </p>
 
-      <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">
-          View Projects
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="mailto:elattarmahmoud96@gmail.com" class="btn-secondary">
-          Get in Touch
-        </a>
-      </div>
 
     </div>
 
@@ -1867,7 +1872,7 @@
 
         <div class="float-card float-card-2">
           <span class="fc-label">Focus</span>
-          <span class="fc-value">Data Engineering</span>
+          <span class="fc-value">Data &amp; ML Engineering</span>
         </div>
 
         <div class="float-card float-card-3">
@@ -1899,6 +1904,7 @@
     <div class="marquee-item"><span class="dot"></span>ETL Pipelines</div>
     <div class="marquee-item"><span class="dot"></span>C++</div>
     <div class="marquee-item"><span class="dot"></span>Data Streaming</div>
+    <div class="marquee-item"><span class="dot"></span>Machine Learning</div>
     <!-- duplicate for seamless loop -->
     <div class="marquee-item"><span class="dot"></span>Apache Kafka</div>
     <div class="marquee-item"><span class="dot"></span>Apache Spark</div>
@@ -1917,21 +1923,23 @@
     <div class="marquee-item"><span class="dot"></span>ETL Pipelines</div>
     <div class="marquee-item"><span class="dot"></span>C++</div>
     <div class="marquee-item"><span class="dot"></span>Data Streaming</div>
+    <div class="marquee-item"><span class="dot"></span>Machine Learning</div>
   </div>
 </div>
 
 <!-- About -->
 <section id="about">
   <div class="container">
-    <div class="section-tag">About Me</div>
-    <h2 class="section-title">Turning <span class="accent">raw data</span><br>into real-world value</h2>
+    <h2 class="section-headline">About Me</h2>
+    <p class="section-sub">Turning <span class="accent">raw data</span> into real-world value</p>
 
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm a <span>Data Engineering student</span> at Zagazig University, passionate about building the infrastructure that makes data useful. I specialize in designing and implementing robust pipelines that handle data at scale.</p>
+        <p>I'm a <span>Data Engineering student</span> with a growing focus on <span>Machine Learning</span> at Zagazig University, passionate about building the infrastructure that makes data useful. I specialize in designing and implementing <span>production-grade pipelines, streaming systems &amp; big data ecosystems</span> that handle data at scale. Turning raw data into insights, one pipeline at a time.</p>
         <p>I completed the <span>DEPI Microsoft Data Engineer program</span> — a competitive government-backed initiative — where I built a real-world Smart City IoT pipeline as my capstone project.</p>
         <p>My stack spans from <span>Python and SQL</span> for scripting and data manipulation, to <span>Apache Kafka, Spark, and Hadoop</span> for big data processing, all containerized with <span>Docker</span> and orchestrated via <span>Airflow</span>.</p>
-        <p>When I'm not building pipelines, I'm expanding my German vocabulary or exploring new areas in cloud data engineering.</p>
+        <p>Beyond data engineering, I've trained in <span>Machine Learning</span> at <span>NTI and DEPI</span>, learning how to turn the data I engineer into models that predict and make decisions.</p>
+        <p>When I'm not building pipelines, I'm expanding my German vocabulary or exploring new areas in cloud data engineering and machine learning.</p>
       </div>
 
     </div>
@@ -1941,8 +1949,8 @@
 <!-- Skills -->
 <section id="skills">
   <div class="container">
-    <div class="section-tag">Skills</div>
-    <h2 class="section-title">Tools &amp; <span class="accent">Technologies</span></h2>
+    <h2 class="section-headline">Skills</h2>
+    <p class="section-sub">Tools &amp; <span class="accent">Technologies</span></p>
 
       <div class="stats-row reveal">
         <div class="stat-item">
@@ -2014,13 +2022,14 @@
             <span class="sc-tag">ETL Pipelines</span>
             <span class="sc-tag">Data Modeling</span>
             <span class="sc-tag">Web Scraping</span>
+            <span class="sc-tag">Machine Learning</span>
           </div>
         </div>
       </div>
 
     <div class="skills-sub" id="spoken-languages">
-      <div class="section-tag">Languages</div>
-      <h2 class="section-title">I speak <span class="accent">3 languages</span></h2>
+      <h2 class="section-headline">Languages</h2>
+    <p class="section-sub">I speak <span class="accent">3 languages</span></p>
 
     <div class="lang-grid">
       <div class="lang-card reveal">
@@ -2058,8 +2067,8 @@
 <!-- Projects -->
 <section id="projects">
   <div class="container">
-    <div class="section-tag">Work</div>
-    <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+    <h2 class="section-headline">Work</h2>
+    <p class="section-sub">Featured <span class="accent">Projects</span></p>
 
 
     <div class="swipe-hint">
@@ -2154,8 +2163,8 @@
 <!-- Certifications -->
 <section id="certs">
   <div class="container">
-    <div class="section-tag">Credentials</div>
-    <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
+    <h2 class="section-headline">Credentials</h2>
+    <p class="section-sub">Certifications</p>
 
     <div class="certs-list">
       <div class="cert-item reveal">
@@ -2190,8 +2199,7 @@
 <!-- Training -->
 <section id="training">
   <div class="container">
-    <div class="section-tag">Learning</div>
-    <h2 class="section-title"><span class="accent">Training</span></h2>
+    <h2 class="section-headline">Training</h2>
 
     <div class="certs-list">
       <div class="cert-item reveal">
@@ -2243,8 +2251,8 @@
 <!-- Education -->
 <section id="education">
   <div class="container">
-    <div class="section-tag">Education</div>
-    <h2 class="section-title">Academic <span class="accent">Background</span></h2>
+    <h2 class="section-headline">Education</h2>
+    <p class="section-sub">Academic <span class="accent">Background</span></p>
 
     <div class="edu-card reveal">
       <div>
@@ -2288,7 +2296,7 @@
     <div class="contact-inner reveal">
       <div class="section-tag" style="justify-content:center; margin-bottom:1.5rem;">Let's Connect</div>
       <h2 class="contact-headline">Ready to build<br><span style="color:var(--accent)">something together?</span></h2>
-      <p class="contact-sub">I'm actively looking for internships and entry-level data engineering opportunities. Let's chat!</p>
+      <p class="contact-sub">I'm actively looking for internships and entry-level data engineering and machine learning opportunities. Let's chat!</p>
 
       <div class="contact-links">
         <a href="mailto:elattarmahmoud96@gmail.com" class="contact-link">
@@ -2544,7 +2552,7 @@
   (function() {
     var el = document.getElementById('typewriterText');
     if (!el) return;
-    var words = ['Data Engineer','Pipeline Builder','Big Data Enthusiast','Problem Solver','ETL Architect'];
+    var words = ['Data Engineer','Machine Learning Engineer','Pipeline Builder','Big Data Enthusiast','ML Model Builder','ETL Architect'];
     var wi=0, ci=0, deleting=false;
     function type() {
       var word = words[wi];
